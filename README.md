@@ -35,7 +35,7 @@ Then add permission in AndroidManifest.xml
 
 ## Usage
 
-Just Call The```yaml missCallVerification```Method and pass parameters
+Just Call The```missCallVerification```Method and pass parameters
 - ApiKey
 - CampaingID
 - Phone Number
