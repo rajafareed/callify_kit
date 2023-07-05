@@ -17,7 +17,7 @@ class CallifyService {
 
   Future<String?> missCallVerification(@required var apiKey,
       @required var campaingID,
-      @required userNumber, var delaySeconds,{callReceivedCallBack}) async {
+      @required userNumber,{callReceivedCallBack}) async {
     Map<Permission, PermissionStatus> permissionStatus = await [
 
       Permission.phone,

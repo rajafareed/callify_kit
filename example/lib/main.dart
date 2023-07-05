@@ -73,18 +73,22 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
         isLoad = true;
       });
-      await CallifyService().missCallVerification('19753A043CF92207609BCB79DDECA8D4', '323', numberController.text.toString(),null,
+      await CallifyService().missCallVerification('19753A043CF92207609BCB79DDECA8D4', '323', numberController.text.toString(),
           callReceivedCallBack: (response){
-      print(response);
-        if(response == true){
-          setState(() {
-            isLoad = false;
-            numberController.text = '';
-          });
-          Get.to(()=>SuccessScreen());
-        }
+
+        // return true if user get the call
 
           });
+
+
+    // print(response);
+    //   if(response == true){
+    //     setState(() {
+    //       isLoad = false;
+    //       numberController.text = '';
+    //     });
+    //     Get.to(()=>SuccessScreen());
+    //   }
 
 
   }

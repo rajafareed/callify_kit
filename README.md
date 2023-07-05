@@ -16,24 +16,38 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Miss Call OTP Verification.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+First, add `callify_kit` as a dependency in your pubspec.yaml file.
+```yaml
+dependencies:
+  callify_kit: ^0.0.1
+```
+
+Don't forget to `flutter pub get`.
+
+Then add permission in AndroidManifest.xml
+```xml
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Just Call The```yaml missCallVerification```Method and pass parameters
+- ApiKey
+- CampaingID
+- Phone Number
+
+
 
 ```dart
-const like = 'sample';
+await CallifyService().missCallVerification(apiKey, campaingID, phoneNumber,
+callReceivedCallBack: (response){
+// return true if user get the call
+
+});
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
