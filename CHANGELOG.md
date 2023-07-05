@@ -1,4 +1,4 @@
-## 0.0.1
+## 0.0.2
 
-* Library for Miss Call OTP Service.
-* 
+* Enums Added on callBack.
+

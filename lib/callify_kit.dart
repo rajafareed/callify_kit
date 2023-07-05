@@ -7,6 +7,11 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:http/http.dart' as http;
 import 'package:phone_state/phone_state.dart';
 
+enum Responses {
+  success,
+  failed,
+  permissionError
+}
 
 class CallifyService {
 
@@ -15,7 +20,7 @@ class CallifyService {
   dynamic callReceivedCallBack;
 
 
-   missCallVerification({@required apiKey,
+   Future missCallVerification({@required apiKey,
       @required var campaingID,
       @required userNumber,callReceivedCallBack}) async {
     Map<Permission, PermissionStatus> permissionStatus = await [
@@ -30,7 +35,14 @@ class CallifyService {
         var jsonResonse = json.decode(response.body);
         callReceivedCallBack(check(jsonResonse['Sender'],callReceivedCallBack));
       }
+      else{
+        callReceivedCallBack(Responses.failed);
 
+      }
+
+    }
+    else{
+      callReceivedCallBack(Responses.permissionError);
     }
   }
 
@@ -43,7 +55,7 @@ class CallifyService {
     var minus = number.toString().length;
 
       if (number == event.number?.substring(event.number!.length - minus) && event.status == PhoneStateStatus.CALL_ENDED) {
-        callBack(true);
+        callBack(Responses.success);
       }
     });
   }
