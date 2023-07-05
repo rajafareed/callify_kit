@@ -1,8 +1,7 @@
 name: callify_kit
 description: Callify Kit for Android and iOS
 version: 0.0.1
-
-homepage:
+homepage: https://github.com/rajafareed/callify_kit
 
 environment:
   sdk: '>=3.0.3 <4.0.0'
