@@ -12,10 +12,10 @@ class CallifyService {
 
   var isRunning = false;
   var isVerified = false;
-  var callReceivedCallBack;
+  dynamic callReceivedCallBack;
 
 
-  Future<String?> missCallVerification({@required apiKey,
+   missCallVerification({@required apiKey,
       @required var campaingID,
       @required userNumber,callReceivedCallBack}) async {
     Map<Permission, PermissionStatus> permissionStatus = await [
