@@ -13,7 +13,7 @@ and the Flutter guide for
 
 ## Getting Started
 
-Call OTP Verification Package. Simple and easiest way to verify your users through miss call api. You are required to put apiKey,campaingId and userNumber in order to use this package.
+Callify OTP Verification Package. Simple and easiest way to verify your users through Miss Call, Voice OTP, SMS OTP and WhatsApp OTP.
 
 ## Features
 
