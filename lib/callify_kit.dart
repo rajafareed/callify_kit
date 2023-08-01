@@ -39,7 +39,7 @@ class CallifyService {
       @required campaingID,
       @required userNumber,
       callReceivedCallBack}) async {
-    Map<Permission, PermissionStatus> permissionStatus = await [
+    await [
       Permission.phone,
     ].request();
     var response = await http.get(Uri.parse(
