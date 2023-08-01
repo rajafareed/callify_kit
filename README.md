@@ -24,7 +24,7 @@ Miss Call OTP Verification.
 First, add `callify_kit` as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  callify_kit: ^0.0.3
+  callify_kit: ^0.0.4
 ```
 
 Don't forget to `flutter pub get`.
