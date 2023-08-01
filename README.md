@@ -47,7 +47,6 @@ For Miss Call OTP - Call The  ```missCallVerification```  Method and pass parame
 await CallifyService().missCallVerification(apiKey, campaingID, phoneNumber,
 callReceivedCallBack: (response){
 // If you are using this package in iOS then you will get incoming call number in response and in Android this package will detect the incoming call and validate it with response number
-
 });
 ```
 
@@ -61,8 +60,7 @@ For Voice OTP - Call The  ```callOtpVerification```  Method and pass parameters
 ```dart
 await CallifyService().callOtpVerification(apiKey, campaingID, phoneNumber,
 callReceivedCallBack: (response){
-// in response you get OTP or Failed 
-
+// in response you get OTP or Failed
 });
 ```
 
