@@ -24,7 +24,7 @@ Miss Call OTP Verification.
 First, add `callify_kit` as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  callify_kit: ^0.0.1
+  callify_kit: ^0.0.3
 ```
 
 Don't forget to `flutter pub get`.
@@ -46,7 +46,7 @@ Just Call The  ```missCallVerification```  Method and pass parameters
 ```dart
 await CallifyService().missCallVerification(apiKey, campaingID, phoneNumber,
 callReceivedCallBack: (response){
-// return true if user get the call
+//return enums success,failed and permissionError
 
 });
 ```

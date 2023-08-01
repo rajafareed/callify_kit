@@ -1,6 +1,6 @@
 name: callify_kit
-description: Callify Kit for Android and iOS
-version: 0.0.2
+description: Callify Kit for Android and iOS with verification method of Miss Call, Voice OTP, SMS and WhatsApp OTP
+version: 0.0.4
 homepage: https://github.com/rajafareed/callify_kit
 
 environment:
@@ -10,11 +10,14 @@ environment:
 dependencies:
   call_log: ^4.0.0
 
+
   flutter:
     sdk: flutter
   http: ^1.1.0
   permission_handler: ^10.4.1
   phone_state: ^1.0.3
+
+
 
 dev_dependencies:
   flutter_test:

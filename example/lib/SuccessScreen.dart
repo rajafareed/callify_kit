@@ -1,4 +1,5 @@
 import 'package:example/main.dart';
+import 'package:example/otp_selection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3),(){
-      Get.back();
+      Get.offAll(()=>OtpSelection());
     });
   }
 
