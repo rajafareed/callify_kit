@@ -50,7 +50,7 @@ callReceivedCallBack: (response){
 });
 ```
 
-For Voice OTP - Call The  ```callOtpVerification```  Method and pass parameters
+For Voice OTP - Call The  ```voiceOtpVerification```  Method and pass parameters
 - ApiKey
 - CampaingID
 - Phone Number
@@ -58,7 +58,7 @@ For Voice OTP - Call The  ```callOtpVerification```  Method and pass parameters
 
 
 ```dart
-await CallifyService().callOtpVerification(apiKey, campaingID, phoneNumber,
+await CallifyService().voiceOtpVerification(apiKey, campaingID, phoneNumber,
 callReceivedCallBack: (response){
 // in response you get OTP or Failed
 });

@@ -42,7 +42,7 @@ class AppController extends GetxController{
     isLoad = true;
     update();
     if (type == VerificationType.call) {
-      CallifyService().callOtpVerification(
+      CallifyService().voiceOtpVerification(
           apiKey: '', campaingID: '', userNumber: number,
           callReceivedCallBack: (response) {
             print(response);
@@ -81,7 +81,7 @@ class AppController extends GetxController{
           });
     }
     else if(type == VerificationType.sms){
-      CallifyService().smsOtpVerification(userName: '', password: '', ordiginator: '', userNumber: number,
+      CallifyService().smsOtpVerification(userName: '', password: '', originator: '', userNumber: number,
       callReceivedCallBack: (response){
         print(response);
         otp = response;

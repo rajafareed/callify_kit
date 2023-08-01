@@ -61,7 +61,7 @@ class CallifyService {
 
   }
 
-  callOtpVerification(
+  voiceOtpVerification(
       {@required apiKey,
       @required campaingID,
       @required userNumber,
