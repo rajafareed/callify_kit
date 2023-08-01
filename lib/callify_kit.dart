@@ -46,7 +46,6 @@ class CallifyService {
         'https://api.smsits.com/misscall?Apikey=$apiKey&recipient=$userNumber&campid=$campaingID&uniqueId=123456'));
 
     if (response.statusCode == 200) {
-      print(response.body);
       var jsonResponse = json.decode(response.body);
       if (Platform.isAndroid) {
         callReceivedCallBack(
@@ -68,7 +67,7 @@ class CallifyService {
       callReceivedCallBack}) async {
     var otp = getInteger(4);
     var response = await http.get(Uri.parse(
-        'https://api.smsits.com/misscall?Apikey=$apiKey&recipient=$userNumber&campid=$campaingID&uniqueId=123456&param1=${otp}'));
+        'https://api.smsits.com/misscall?Apikey=$apiKey&recipient=$userNumber&campid=$campaingID&uniqueId=123456&param1=$otp'));
     if (response.statusCode == 200) {
       callReceivedCallBack(otp);
     } else {
@@ -88,8 +87,6 @@ class CallifyService {
     var phone = userNumber.toString().substring(1,userNumber.toString().length);
     var response = await http.get(Uri.parse(
         'https://api.smsits.com/Gotp?action=sendmessage&username=$userName&&password=$password&recipient=92$phone&originator=$originator&otpcode=$otp&otptype=1'));
-    print(response.request!.url);
-    print(response.body);
     if (response.statusCode == 200) {
       callReceivedCallBack(otp);
     } else {
@@ -107,7 +104,6 @@ class CallifyService {
     var otp = getInteger(4);
     var response = await http.get(Uri.parse(
         'https://otac.golive.com.pk/api/whatsapp/otp?apikey=$apiKey&recipient=+92$phone&templateId=$templateId&otac=$otp'));
-    print(response.request!.url);
     if (response.statusCode == 200) {
       var js = json.decode(response.body);
       if(js['response']['status'] == 'success'){
