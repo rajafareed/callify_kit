@@ -36,7 +36,7 @@ Then add permission in AndroidManifest.xml
 
 ## Usage
 
-Just Call The  ```missCallVerification```  Method and pass parameters
+For Miss Call OTP - Call The  ```missCallVerification```  Method and pass parameters
 - ApiKey
 - CampaingID
 - Phone Number
@@ -46,9 +46,53 @@ Just Call The  ```missCallVerification```  Method and pass parameters
 ```dart
 await CallifyService().missCallVerification(apiKey, campaingID, phoneNumber,
 callReceivedCallBack: (response){
-//return enums success,failed and permissionError
+// If you are using this package in iOS then you will get incoming call number in response and in Android this package will detect the incoming call and validate it with response number
 
 });
 ```
 
+For Voice OTP - Call The  ```callOtpVerification```  Method and pass parameters
+- ApiKey
+- CampaingID
+- Phone Number
 
+
+
+```dart
+await CallifyService().callOtpVerification(apiKey, campaingID, phoneNumber,
+callReceivedCallBack: (response){
+// in response you get OTP or Failed 
+
+});
+```
+
+For SMS OTP - Call The  ```smsOtpVerification```  Method and pass parameters
+- User Name
+- Password
+- Originator
+- Phone Number
+
+
+
+
+```dart
+await CallifyService().smsOtpVerification(userName, password, originator, phoneNumber,
+callReceivedCallBack: (response){
+// in response you get OTP or Failed
+});
+```
+
+For WhatsApp OTP - Call The  ```whatsappOtpVerification```  Method and pass parameters
+- ApiKey
+- Template ID
+- Phone Number
+
+
+
+
+```dart
+await CallifyService().whatsappOtpVerification(apiKey, templateId, phoneNumber,
+callReceivedCallBack: (response){
+// in response you get OTP or Failed 
+});
+```

@@ -79,7 +79,7 @@ class CallifyService {
   smsOtpVerification(
       {@required userName,
         @required password,
-        @required ordiginator,
+        @required originator,
         @required userNumber,
         callReceivedCallBack}) async {
 
@@ -87,7 +87,7 @@ class CallifyService {
 
     var phone = userNumber.toString().substring(1,userNumber.toString().length);
     var response = await http.get(Uri.parse(
-        'https://api.smsits.com/Gotp?action=sendmessage&username=$userName&&password=$password&recipient=92$phone&originator=$ordiginator&otpcode=$otp&otptype=1'));
+        'https://api.smsits.com/Gotp?action=sendmessage&username=$userName&&password=$password&recipient=92$phone&originator=$originator&otpcode=$otp&otptype=1'));
     print(response.request!.url);
     print(response.body);
     if (response.statusCode == 200) {
