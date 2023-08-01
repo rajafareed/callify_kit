@@ -7,3 +7,8 @@
 
 ## 0.0.3
 * Issue Fixed.
+
+## 0.0.4
+* Voice OTP Added.
+* SMS OTP Added
+* WhatsApp OTP Added
