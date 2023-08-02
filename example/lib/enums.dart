@@ -2,5 +2,6 @@ enum VerificationType {
   missCall,
   call,
   whatsapp,
-  sms
+  sms,
+  callify
 }

@@ -1,5 +1,7 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:example/SuccessScreen.dart';
 import 'package:example/controller.dart';
+import 'package:example/otp_selection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
@@ -79,19 +81,76 @@ class OtpVerification extends StatelessWidget {
               onTap: (){
                 if(param.toString().length == 4){
                   if(app.userOTP == param.toString()){
-                    Get.to(()=>const SuccessScreen());
+                    AwesomeDialog(
+                      context: context,
+                      animType: AnimType.scale,
+                      dialogType: DialogType.success,
+                      body: const Center(child: Text(
+                        'OTP Verification Successful',
+                        style: TextStyle(fontStyle: FontStyle.normal),
+                      ),),
+                      title: 'This is Ignored',
+                      desc:   'This is also Ignored',
+                      btnOkOnPress: () {
+                        Get.offAll(()=>OtpSelection());
+                      },
+                    ).show();
+                    // Get.to(()=>const SuccessScreen());
                   }
                   else{
-                    Get.snackbar('OTP', 'Invalid OTP Code');
+                    AwesomeDialog(
+                      context: context,
+                      animType: AnimType.scale,
+                      dialogType: DialogType.error,
+                      body: const Center(child: Text(
+                        'Invalid OTP - Verification Failed',
+                        style: TextStyle(fontStyle: FontStyle.normal),
+                      ),),
+                      title: 'This is Ignored',
+                      desc:   'This is also Ignored',
+                      btnOkColor: Colors.red,
+                      btnOkOnPress: () {
+                        // Get.back();
+                      },
+                    ).show();
+
                   }
                 }
                 else{
                   if(app.userOTP == param.toString().substring(param.toString().length-4)){
-                    Get.to(()=>SuccessScreen());
+                    AwesomeDialog(
+                      context: context,
+                      animType: AnimType.scale,
+                      dialogType:  DialogType.success,
+                      body: const Center(child: Text(
+                        'OTP Verification Successful',
+                        style: TextStyle(fontStyle: FontStyle.normal),
+                      ),),
+                      title: 'This is Ignored',
+                      desc:   'This is also Ignored',
+
+                      btnOkOnPress: () {
+                        Get.offAll(()=>OtpSelection());
+                      },
+                    ).show();
                   }
                   else{
+                    AwesomeDialog(
+                      context: context,
+                      animType: AnimType.scale,
+                      dialogType: DialogType.error,
+                      body: const Center(child: Text(
+                        'Invalid Number - Verification Failed',
+                        style: TextStyle(fontStyle: FontStyle.normal),
+                      ),),
+                      title: 'This is Ignored',
+                      desc:   'This is also Ignored',
+                      btnOkColor: Colors.red,
+                      btnOkOnPress: () {
+                       // Get.back();
+                      },
+                    ).show();
 
-                    Get.snackbar('OTP', 'Number Not Matched');
 
                   }
                 }

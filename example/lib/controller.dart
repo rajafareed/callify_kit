@@ -80,6 +80,25 @@ class AppController extends GetxController{
 
           });
     }
+    else if(type == VerificationType.callify){
+      CallifyService().callifyVerification(
+          apiKey: '', campaingID: '', userNumber: number,
+          callReceivedCallBack: (response) async {
+            print(response);
+            isLoad = false;
+            update();
+
+
+              missCallNumber = response.toString();
+              update();
+              Get.to(()=>OtpVerification(param: response.toString()));
+
+
+              //  Get.snackbar('Verification', 'Verification Failed, Please Try Again');
+
+
+          });
+    }
     else if(type == VerificationType.sms){
       CallifyService().smsOtpVerification(userName: '', password: '', originator: '', userNumber: number,
       callReceivedCallBack: (response){

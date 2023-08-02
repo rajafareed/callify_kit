@@ -60,6 +60,26 @@ class CallifyService {
 
   }
 
+
+  Future callifyVerification(
+      {@required apiKey,
+        @required campaingID,
+        @required userNumber,
+        callReceivedCallBack}) async {
+
+    var response = await http.get(Uri.parse(
+        'https://api.smsits.com/misscall?Apikey=$apiKey&recipient=$userNumber&campid=$campaingID&uniqueId=123456'));
+    if (response.statusCode == 200) {
+      var jsonResponse = json.decode(response.body);
+
+      callReceivedCallBack(jsonResponse['Sender']);
+
+    } else {
+      callReceivedCallBack(Responses.failed);
+    }
+  }
+
+
   voiceOtpVerification(
       {@required apiKey,
       @required campaingID,

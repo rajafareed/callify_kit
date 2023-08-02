@@ -12,3 +12,6 @@
 * Voice OTP Added.
 * SMS OTP Added
 * WhatsApp OTP Added
+
+## 0.0.5
+* Callify OTP Added.

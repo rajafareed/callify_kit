@@ -85,7 +85,7 @@ class OtpSelection extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap:(){
-                          Get.to(()=>PhoneScreen(),arguments: [VerificationType.sms]);
+                          Get.to(()=>PhoneScreen(),arguments: [VerificationType.callify]);
                       },
                         child: Container(
                         height: Get.height * 0.16,
@@ -98,9 +98,9 @@ class OtpSelection extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset('assets/sms.png',height: 60,width: 60,),
+                            Image.asset('assets/callify.png',height: 60,width: 60,),
                             const SizedBox(height: 10,),
-                            Text('SMS OTP',style: TextStyle(fontSize: Get.height * 0.018))
+                            Text('Callify OTP',style: TextStyle(fontSize: Get.height * 0.018))
                           ],),
                       ),),
                       InkWell(
@@ -124,6 +124,32 @@ class OtpSelection extends StatelessWidget {
                           ],),
                       )),
                     ],),
+                  const SizedBox(height: 20,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    InkWell(
+                      onTap:(){
+                        Get.to(()=>PhoneScreen(),arguments: [VerificationType.sms]);
+                      },
+                      child: Container(
+                        height: Get.height * 0.16,
+                        width: Get.width * 0.35,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.black,width: 2)
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/sms.png',height: 60,width: 60,),
+                            const SizedBox(height: 10,),
+                            Text('SMS OTP',style: TextStyle(fontSize: Get.height * 0.018))
+                          ],),
+                      ),),
+                  ],)
                 ],),
             ))])),
     );
