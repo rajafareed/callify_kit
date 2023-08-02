@@ -94,8 +94,6 @@ class AppController extends GetxController{
               Get.to(()=>OtpVerification(param: response.toString()));
 
 
-              //  Get.snackbar('Verification', 'Verification Failed, Please Try Again');
-
 
           });
     }

@@ -1,6 +1,6 @@
 name: callify_kit
 description: Callify Kit for Android and iOS with verification method of Callify OTP, Miss Call, Voice OTP, SMS and WhatsApp OTP
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/rajafareed/callify_kit
 
 environment:
