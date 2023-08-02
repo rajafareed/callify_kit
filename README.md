@@ -36,6 +36,20 @@ Then add permission in AndroidManifest.xml
 
 ## Usage
 
+For Callify OTP - Call The  ```callifyVerification```  Method and pass parameters
+- ApiKey
+- CampaingID
+- Phone Number
+
+
+
+```dart
+await CallifyService().callifyVerification(apiKey, campaingID, phoneNumber,
+callReceivedCallBack: (response){
+// in response you will get incoming call number, just need to verify it
+});
+```
+
 For Miss Call OTP - Call The  ```missCallVerification```  Method and pass parameters
 - ApiKey
 - CampaingID
